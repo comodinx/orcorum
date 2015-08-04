@@ -1,4 +1,4 @@
-# orcorum v0.1.1
+# orcorum v0.1.2
 
 Helper library for JavaScript
 
