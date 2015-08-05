@@ -1,4 +1,4 @@
-# orcorum v0.1.4
+# orcorum v0.1.5
 
 Helper library for JavaScript
 
@@ -140,8 +140,8 @@ console.log(orcorum.url.removeParams('/path/to?search=auto', 'search')); // => /
 Remove all url params.
 
 ```javascript
-console.log(orcorum.url.cleanParams('/path/to?search=auto&country=ar', 'country')); // => /path/to
-console.log(orcorum.url.cleanParams('/path/to?search=auto', 'search')); // => /path/to
+console.log(orcorum.url.cleanParams('/path/to?search=auto&country=ar')); // => /path/to
+console.log(orcorum.url.cleanParams('/path/to?search=auto')); // => /path/to
 ```
 
 ### orcorum.time
