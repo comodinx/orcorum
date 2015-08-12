@@ -99,6 +99,28 @@ orcorum.object.extend({
 }); // => {name: {first: 'pepito', last: 'robin'}, age: 3}
 ```
 
+### orcorum.string
+
+#### startsWith(str, starts)
+
+Checks whether the `str` begins with `starts`.
+
+```javascript
+console.log(orcorum.string.startsWith('/path/to', '/')); // => true
+console.log(orcorum.string.startsWith('/path/to', '/path')); // => true
+console.log(orcorum.string.startsWith('/path/to', '/to')); // => false
+```
+
+#### endsWith(str, ends)
+
+Checks whether the `str` ends with `ends`.
+
+```javascript
+console.log(orcorum.string.endsWith('/path/to', 'o')); // => true
+console.log(orcorum.string.endsWith('/path/to', '/to')); // => true
+console.log(orcorum.string.endsWith('/path/to', '/path')); // => false
+```
+
 ### orcorum.url
 
 #### normalize(url)
