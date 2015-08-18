@@ -3,7 +3,25 @@ orcorum [![NPM Version](https://img.shields.io/npm/v/orcorum.svg?style=flat)](ht
 
 Helper library for JavaScript
 
-## API
+
+Installing
+----------
+
+```
+npm install orcorum
+```
+
+
+Running the tests
+-----------------
+
+```
+npm test
+```
+
+
+API
+---
 
 ### orcorum.classes
 
@@ -72,6 +90,33 @@ orcorum.object.get({
     },
     age: 3
 }, ['works', 'first', 'beginDate']); // => undefined
+```
+
+#### set(target, keys, value)
+
+Set property in target.
+
+```javascript
+orcorum.object.set({
+    name: 'pepito',
+    age: 3
+}, 'name', 'josecito'); // => {name: 'josecito', age: 3}
+
+orcorum.object.set({
+    name: {
+        first: 'pepito',
+        last: 'roman'
+    },
+    age: 3
+}, ['name', 'first'], 'josecito'); // => {name: {first: 'josecito', last: 'roman'}, age: 3}
+
+orcorum.object.set({
+    name: {
+        first: 'pepito',
+        last: 'roman'
+    },
+    age: 3
+}, ['name', 'alias'], 'pepe'); // => {name: {first: 'pepito', last: 'roman', alias: 'pepe'}, age: 3}
 ```
 
 #### extend(target, *sources)

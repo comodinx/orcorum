@@ -5,6 +5,7 @@ describe('orcorum', function testOrcorum() {
         test();
         describe('#extend', testExtent);
         describe('#get', testGet);
+        describe('#set', testSet);
     });
 });
 
@@ -65,5 +66,43 @@ function testGet() {
 
     it('should property ["name", "alias"] is undefined, but get method return default value "pepe"', function() {
         expect(orcorum.object.get(person, ['name', 'alias'], 'pepe')).to.equal('pepe');
+    });
+}
+
+function testSet() {
+    it('after set "name" in person, it should return the property value "josecito"', function() {
+        var person = {
+            name: {
+                first: 'pepito',
+                last: 'roman'
+            },
+            age: 3
+        };
+        orcorum.object.set(person, 'name', 'josecito');
+        expect(person).to.have.deep.property('name', 'josecito');
+    });
+
+    it('after set ["name", "first"] in person, it should return the property value "josecito"', function() {
+        var person = {
+            name: {
+                first: 'pepito',
+                last: 'roman'
+            },
+            age: 3
+        };
+        orcorum.object.set(person, ['name', 'first'], 'josecito');
+        expect(person).to.have.deep.property('name.first', 'josecito');
+    });
+
+    it('after set ["works", "first", "beginDate"] in person, it should return the property value current Date', function() {
+        var person = {
+            name: {
+                first: 'pepito',
+                last: 'roman'
+            },
+            age: 3
+        };
+        orcorum.object.set(person, ['works', 'first', 'beginDate'], new Date());
+        expect(person).to.have.deep.property('works.first.beginDate');
     });
 }
