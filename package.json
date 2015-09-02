@@ -1,6 +1,6 @@
 {
   "name": "orcorum",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Helper library for JavaScript",
   "main": "index.js",
   "scripts": {

@@ -25,7 +25,7 @@ API
 
 ### orcorum.classes
 
-#### extend(properties, [statics])
+#### extend(properties[, statics])
 
 To create a class of your own base class, you extend your base class and provide instance properties, as well as optional statics to be attached directly to the constructor function.
 
@@ -57,7 +57,7 @@ console.log(dog.bark()); // => GUAUUU!!!
 
 ### orcorum.object
 
-#### get(target, keys, [defaultValue])
+#### get(target, keys[, defaultValue])
 
 Get property of target.
 
@@ -225,4 +225,29 @@ console.log(orcorum.time.HOUR);   // => 3600000
 console.log(orcorum.time.DAY);    // => 86400000
 console.log(orcorum.time.MONTH);  // => 2592000000
 console.log(orcorum.time.YEAR);   // => 31104000000
+```
+
+### orcorum.fs
+
+#### requiredirSync(dirname[, options])
+
+Requires all files in a directory into an object with the same structure.
+
+##### Options
+
+* `excludes` Files excludes. Defaults to `['index']`.
+* `extension` Files extension. Only require the file match with this extension. Defaults to `'.js']`.
+
+```javascript
+orcorum.fs.requiredirSync(__dirname);
+
+// Or 
+orcorum.fs.requiredirSync(__dirname, {
+    excludes: ['my_exclude_file']
+});
+
+// Or 
+orcorum.fs.requiredirSync(__dirname, {
+    extension: '.json'
+});
 ```
