@@ -144,28 +144,6 @@ orcorum.object.extend({
 }); // => {name: {first: 'pepito', last: 'robin'}, age: 3}
 ```
 
-### orcorum.string
-
-#### startsWith(str, starts)
-
-Checks whether the `str` begins with `starts`.
-
-```javascript
-console.log(orcorum.string.startsWith('/path/to', '/')); // => true
-console.log(orcorum.string.startsWith('/path/to', '/path')); // => true
-console.log(orcorum.string.startsWith('/path/to', '/to')); // => false
-```
-
-#### endsWith(str, ends)
-
-Checks whether the `str` ends with `ends`.
-
-```javascript
-console.log(orcorum.string.endsWith('/path/to', 'o')); // => true
-console.log(orcorum.string.endsWith('/path/to', '/to')); // => true
-console.log(orcorum.string.endsWith('/path/to', '/path')); // => false
-```
-
 ### orcorum.url
 
 #### normalize(url)
@@ -225,6 +203,25 @@ console.log(orcorum.time.HOUR);   // => 3600000
 console.log(orcorum.time.DAY);    // => 86400000
 console.log(orcorum.time.MONTH);  // => 2592000000
 console.log(orcorum.time.YEAR);   // => 31104000000
+```
+
+### orcorum.http
+
+#### method, status and type
+
+Time in milliseconds.
+
+```javascript
+console.log(orcorum.http.method.GET); // => 'get'
+console.log(orcorum.http.method.POST); // => 'post'
+// ...
+console.log(orcorum.http.status.OK); // => 200
+console.log(orcorum.http.status.SUCCESS); // => 200
+console.log(orcorum.http.status.NO_CONTENT); // => 204
+// ...
+console.log(orcorum.http.type.FORM);   // => 'application/x-www-form-urlencoded'
+console.log(orcorum.http.type.MULTIPART);   // => 'multipart/form-data'
+// ...
 ```
 
 ### orcorum.fs
